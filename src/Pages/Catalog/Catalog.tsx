@@ -1,7 +1,7 @@
 import { Request } from '@/Shared/Hooks/useFetch';
 import { AdItem } from '@/Widgets/AdItem';
 import type { Advertisment } from '@types';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import s from './Catalog.module.css';
 import { CatalogFilters } from '@/Widgets/CatalogFilters';
 import type { PaginatedResponse } from './types';
@@ -55,11 +55,11 @@ function Catalog() {
     };
   }, [maxAdsPerPage, currentPage, debouncedSearch, sort]);
 
-  const handlePageChange = (newPage: number) => {
+  const handlePageChange = useCallback((newPage: number) => {
     setCurrentPage(newPage);
-  };
+  }, []);
 
-  const handleAddClick = () => setIsModalOpen((prev) => !prev);
+  const handleAddClick = useCallback(() => setIsModalOpen((prev) => !prev), []);
 
   const handleAddSubmit = async (values: FieldType) => {
     handleAddClick();

@@ -2,24 +2,26 @@ import { useFilter, type SortFields } from '@/App/Providers/AdContext';
 import s from './Filters.module.css';
 import { Input } from 'antd';
 import { Select } from 'antd';
+import { useCallback } from 'react';
 
 function CatalogFilters() {
   const { search, maxAdsPerPage, setMaxAdsPerPage, setSearch, setSort, sort } =
     useFilter();
 
-  const handleSearchChange = (
-    e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>
-  ) => {
-    setSearch(e.target.value);
-  };
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+      setSearch(e.target.value);
+    },
+    []
+  );
 
-  const handleMaxAdsSelect = (e: string) => {
+  const handleMaxAdsSelect = useCallback((e: string) => {
     setMaxAdsPerPage(Number(e));
-  };
+  }, []);
 
-  const handleSortSelect = (e: SortFields) => {
+  const handleSortSelect = useCallback((e: SortFields) => {
     setSort(e);
-  };
+  }, []);
 
   return (
     <div className={s.container}>

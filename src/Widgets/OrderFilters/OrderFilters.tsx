@@ -1,6 +1,7 @@
 import { Radio, Select, type RadioChangeEvent } from 'antd';
 import s from './OrderFilters.module.css';
 import { useOrderFilter } from '@/App/Providers/OrderContext';
+import { useCallback } from 'react';
 
 function OrderFilters() {
   const {
@@ -11,17 +12,17 @@ function OrderFilters() {
     setMaxAdsPerPage
   } = useOrderFilter();
 
-  const handleStatusChange = (value: number) => {
+  const handleStatusChange = useCallback((value: number) => {
     setStatus(value);
-  };
+  }, []);
 
-  const handleMaxAdsSelect = (e: string) => {
+  const handleMaxAdsSelect = useCallback((e: string) => {
     setMaxAdsPerPage(Number(e));
-  };
+  }, []);
 
-  const handlePriceSortChange = (e: RadioChangeEvent) => {
+  const handlePriceSortChange = useCallback((e: RadioChangeEvent) => {
     setPriceSort(e.target.value);
-  };
+  }, []);
   return (
     <div className={s.container}>
       <Select

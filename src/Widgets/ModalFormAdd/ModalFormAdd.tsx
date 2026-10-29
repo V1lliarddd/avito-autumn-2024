@@ -1,5 +1,6 @@
 import { Button, Form, Input, Modal, type FormProps } from 'antd';
 import type { FieldType, ModalFormProps } from './types';
+import { useCallback } from 'react';
 
 function ModalFormAdd({
   initialData,
@@ -7,9 +8,12 @@ function ModalFormAdd({
   onCancel,
   onSubmit
 }: ModalFormProps) {
-  const handleSubmit: FormProps<FieldType>['onFinish'] = (values) => {
-    onSubmit(values);
-  };
+  const handleSubmit: FormProps<FieldType>['onFinish'] = useCallback(
+    (values) => {
+      onSubmit(values);
+    },
+    []
+  );
 
   return (
     <Modal

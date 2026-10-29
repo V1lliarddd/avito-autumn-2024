@@ -3,7 +3,7 @@ import eye from '@/Assets/Icons/eye.svg';
 import like from '@/Assets/Icons/thumb_up.svg';
 import { Request } from '@/Shared/Hooks/useFetch';
 import type { Advertisment } from '@types';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import productPlaceholder from '@/Assets/Images/product-placeholder.jpg';
 import { Button } from 'antd';
@@ -43,7 +43,10 @@ function Ad() {
     };
   }, []);
 
-  const handleEditClick = () => setIsModalOpen((prev) => !prev);
+  const handleEditClick = useCallback(
+    () => setIsModalOpen((prev) => !prev),
+    []
+  );
 
   const handleEditSubmit = async (values: Omit<FieldType, 'remember'>) => {
     handleEditClick();

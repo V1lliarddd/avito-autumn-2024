@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import s from './Order.module.css';
 import type { Order as OrderModel } from '@types';
 import { Request } from '@/Shared/Hooks/useFetch';
@@ -54,9 +54,9 @@ function Order() {
     };
   }, [priceSort, status, maxAdsPerPage, currentPage, adId]);
 
-  const handlePageChange = (newPage: number) => {
+  const handlePageChange = useCallback((newPage: number) => {
     setCurrentPage(newPage);
-  };
+  }, []);
 
   const filteredData = useMemo(() => {
     if (!adId) return data;

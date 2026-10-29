@@ -1,5 +1,6 @@
 import { Button, Form, Input, Modal, type FormProps } from 'antd';
 import type { FieldType, ModalFormProps } from './types';
+import { useCallback } from 'react';
 
 function ModalFormEdit({
   isModalOpen,
@@ -7,9 +8,12 @@ function ModalFormEdit({
   onSubmit,
   initialData
 }: ModalFormProps) {
-  const handleSubmit: FormProps<FieldType>['onFinish'] = (values) => {
-    onSubmit(values);
-  };
+  const handleSubmit: FormProps<FieldType>['onFinish'] = useCallback(
+    (values) => {
+      onSubmit(values);
+    },
+    []
+  );
   return (
     <Modal
       title="Редактирование объявления"
