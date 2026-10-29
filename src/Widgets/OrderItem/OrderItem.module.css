@@ -1,0 +1,157 @@
+.container {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Список характеристик заказа */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.label {
+  color: #6b6b6b;
+}
+
+.value {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Кнопка «Показать все товары» */
+.showItemsButton {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid rgb(0 0 0);
+  border-radius: 8px;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.showItemsButton:hover {
+  background: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b6b6b;
+}
+
+.closeButton:hover {
+  color: #000;
+}
+
+.itemsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.itemRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.itemImage {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemName {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemMeta {
+  margin: 0;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.itemSum {
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap;
+}

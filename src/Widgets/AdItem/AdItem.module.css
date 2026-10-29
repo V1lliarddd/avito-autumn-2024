@@ -1,0 +1,42 @@
+.item_description {
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* максимум 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item_price {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.info {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info_subcontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  width: 100%;
+}

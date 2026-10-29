@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
+
+select {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

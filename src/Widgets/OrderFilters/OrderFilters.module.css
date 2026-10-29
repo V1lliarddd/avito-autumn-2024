@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.price_sort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
